@@ -264,7 +264,7 @@ if audio_file is not None:
 Histórico:
 {historico_texto}
 
-Estudante disse: "{texto_reconhecido}"
+Estudante disse (transcrição de voz crua): "{texto_reconhecido}"
 
 Gere a sua resposta EXATAMENTE com estas três tags. Seja conciso e direto.
 
@@ -272,7 +272,7 @@ Gere a sua resposta EXATAMENTE com estas três tags. Seja conciso e direto.
 Sua resposta natural em inglês.
 
 [FEEDBACK]
-Sua avaliação em Português do Brasil. Seja breve e não repita frases.
+Sua avaliação em Português do Brasil. ATENÇÃO: O texto do estudante vem de um reconhecimento de voz. É ESTRITAMENTE PROIBIDO corrigir falta de pontuação (pontos, vírgulas) ou letras maiúsculas/minúsculas. Avalie exclusivamente a construção gramatical da fala e sugira vocabulário.
 
 [TRADUCAO]
 Estudante: Tradução da frase do estudante.
