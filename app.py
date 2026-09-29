@@ -255,25 +255,26 @@ if audio_file is not None:
                 historico_texto += f"{prefixo}: {msg['content']}\n"
 
             # PROMPT AGRESSIVO PARA OBRIGAR A TRADUÇÃO
-            prompt_ia = f"""
-            Você é o Chatter-B, um tutor amigável de conversação em inglês. 
-            Sempre que o estudante perguntar o seu nome ou quem você é, responda de forma natural em inglês que o seu nome é Chatter-B.
-    Histórico da conversa:
-    {historico_texto}
+            prompt_ia = f"""Você é o Chatter-B, um tutor amigável de conversação em inglês.
+Sempre que o estudante perguntar o seu nome ou quem você é, responda de forma natural em inglês que o seu nome é Chatter-B.
 
-    O estudante acabou de dizer: "{texto_reconhecido}"
+Histórico da conversa:
+{historico_texto}
 
-    REGRA MÁXIMA: Você DEVE estruturar a sua resposta EXATAMENTE com os três marcadores abaixo (incluindo os colchetes). É estritamente proibido não usar os marcadores.
+O estudante acabou de dizer: "{texto_reconhecido}"
 
-    [INGLES]
-    Escreva aqui APENAS a sua resposta natural em INGLÊS, mantendo o diálogo vivo.
+REGRA MÁXIMA: É estritamente proibido adicionar qualquer texto antes do primeiro marcador ou fora do formato exigido. Você DEVE estruturar a sua resposta preenchendo EXATAMENTE o molde abaixo:
 
-    [FEEDBACK]
-    Escreva aqui em PORTUGUÊS DO BRASIL a sua avaliação pedagógica. Diga se a construção gramatical foi boa e sugira vocabulário.
+[INGLES]
+(A sua resposta natural em inglês mantendo o diálogo vivo)
 
-    [TRADUCAO]
-    Escreva aqui a TRADUÇÃO para o português do Brasil da frase do estudante e da sua resposta. Abaixo um do outro com o Marcador Resposta do Estudante e Resposta do Tutor.
-    """
+[FEEDBACK]
+(A sua avaliação pedagógica em português do Brasil, comentando a construção gramatical e sugerindo vocabulário)
+
+[TRADUCAO]
+Estudante: (Tradução da frase do estudante para o português do Brasil)
+Tutor: (Tradução da sua resposta para o português do Brasil)
+"""
 
             texto_tutor = None
             for modelo_teste in LISTA_MODELOS:
