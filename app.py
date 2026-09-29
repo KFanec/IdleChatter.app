@@ -34,7 +34,11 @@ def obter_lista_modelos():
             if not any(p in m.id.lower() for p in palavras_bloqueadas)
         ]
     except Exception:
-        return ["llama-3.1-8b-instant", "gemma2-9b-it", "mixtral-8x7b-32768"]
+        return [
+            "llama-3.3-70b-versatile",
+            "llama-3.1-70b-versatile",
+            "mixtral-8x7b-32768",
+        ]
 
 
 LISTA_MODELOS = obter_lista_modelos()
@@ -275,12 +279,12 @@ Estudante: Tradução da frase do estudante.
 Tutor: Tradução da sua resposta.
 """
 
-            texto_tutor = None
             for modelo_teste in LISTA_MODELOS:
                 try:
                     resposta = client.chat.completions.create(
                         messages=[{"role": "user", "content": prompt_ia}],
                         model=modelo_teste,
+                        temperature=0.1,  # <-- ESTA É A MAGIA QUE ACABA COM AS ALUCINAÇÕES
                     )
                     texto_tutor = resposta.choices[0].message.content
                     break
