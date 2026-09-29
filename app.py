@@ -255,26 +255,24 @@ if audio_file is not None:
                 historico_texto += f"{prefixo}: {msg['content']}\n"
 
             # PROMPT AGRESSIVO PARA OBRIGAR A TRADUÇÃO
-            prompt_ia = f"""Você é o Chatter-B, um tutor amigável de conversação em inglês.
-Sempre que o estudante perguntar o seu nome ou quem você é, responda de forma natural em inglês que o seu nome é Chatter-B.
+            prompt_ia = f"""Você é o Chatter-B, um tutor de inglês.
 
-Histórico da conversa:
+Histórico:
 {historico_texto}
 
-O estudante acabou de dizer: "{texto_reconhecido}"
+Estudante disse: "{texto_reconhecido}"
 
-REGRA MÁXIMA: É estritamente proibido adicionar qualquer texto fora do formato abaixo. Você DEVE preencher rigorosamente este molde:
+Gere a sua resposta EXATAMENTE com estas três tags. Seja conciso e direto.
 
 [INGLES]
-(A sua resposta natural em inglês mantendo o diálogo vivo)
+Sua resposta natural em inglês.
 
 [FEEDBACK]
-(ESCREVA ESTA SECÇÃO EXCLUSIVAMENTE EM PORTUGUÊS DO BRASIL. Faça a sua avaliação pedagógica, comentando a construção gramatical e sugerindo vocabulário)
+Sua avaliação em Português do Brasil. Seja breve e não repita frases.
 
 [TRADUCAO]
-Estudante: (Tradução da frase do estudante para o português do Brasil)
-
-Tutor: (Tradução da sua resposta para o português do Brasil)
+Estudante: Tradução da frase do estudante.
+Tutor: Tradução da sua resposta.
 """
 
             texto_tutor = None
