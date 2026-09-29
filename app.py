@@ -263,16 +263,17 @@ Histórico da conversa:
 
 O estudante acabou de dizer: "{texto_reconhecido}"
 
-REGRA MÁXIMA: É estritamente proibido adicionar qualquer texto antes do primeiro marcador ou fora do formato exigido. Você DEVE estruturar a sua resposta preenchendo EXATAMENTE o molde abaixo:
+REGRA MÁXIMA: É estritamente proibido adicionar qualquer texto fora do formato abaixo. Você DEVE preencher rigorosamente este molde:
 
 [INGLES]
 (A sua resposta natural em inglês mantendo o diálogo vivo)
 
 [FEEDBACK]
-(A sua avaliação pedagógica em português do Brasil, comentando a construção gramatical e sugerindo vocabulário)
+(ESCREVA ESTA SECÇÃO EXCLUSIVAMENTE EM PORTUGUÊS DO BRASIL. Faça a sua avaliação pedagógica, comentando a construção gramatical e sugerindo vocabulário)
 
 [TRADUCAO]
 Estudante: (Tradução da frase do estudante para o português do Brasil)
+
 Tutor: (Tradução da sua resposta para o português do Brasil)
 """
 
