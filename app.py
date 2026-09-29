@@ -9,7 +9,8 @@ import speech_recognition as sr
 from groq import Groq
 
 # --- CONFIGURAÇÃO DA IA (GROQ) ---
-CHAVE_GROQ = "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"
+# --- CONFIGURAÇÃO DA IA (GROQ) ---
+CHAVE_GROQ = st.secrets["GROQ_API_KEY"]
 client = Groq(api_key=CHAVE_GROQ)
 
 
